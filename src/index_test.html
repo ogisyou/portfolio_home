@@ -104,68 +104,92 @@
       </div>
     </section>
 
-    <!-- Profile -->
-    <section id="profile" class="py-20 bg-white">
-      <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Profile</h2>
-      <div class="max-w-[700px] mx-auto flex flex-col md:flex-row justify-center items-center bg-orange-300">
-        <img src="img/profile1.png" alt="profile-img" class="w-40 h-40 rounded-full mb-8 md:mb-0 md:mr-12 profile-img-wrapper">
-        <ul class="font-bold space-y-4 text-center md:text-left profile-list">
-          <li>名前: Ogiwara Syouhei</li>
-          <li>出身:</li>
-          <li>学歴: 法政大学 経済学部</li>
-          <li>経歴: 由度の高さと奥深い内容にのめり込み、2022年11月よりプログラミング学習を開始。HTML/CSSを学習しながら日々スキルアップを図っています。高専で機械工学、技科大で材料工学を学んだのち、メーカーで温度センサーの材料開発・生産に従事。その後ITの技術にひかれ、31才でIT業界へ転職。運用・テクニカルサポートからキャリアをスタートし、AWSクラウドサーバー構築、Webページ作成、Python/djangoのツール改修など、インフラからフロントサイドまで幅広く業務を経験してきました。</li>
-        </ul>
+<!-- Profile -->
+<section id="profile" class="py-20 bg-white">
+  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Profile</h2>
+  <div class="max-w-[700px] mx-auto flex flex-col md:flex-row justify-center items-center">
+    <img src="img/profile1.png" alt="profile-img" class="w-40 h-40 rounded-full mb-8 md:mb-0 md:mr-12 profile-img-wrapper">
+    <ul class="font-bold space-y-4 text-center md:text-left profile-list">
+      <li>名前: Ogiwara Syouhei</li>
+      <li>出身:</li>
+      <li>学歴: 法政大学 経済学部</li>
+      <li>経歴: 由度の高さと奥深い内容にのめり込み、2022年11月よりプログラミング学習を開始。HTML/CSSを学習しながら日々スキルアップを図っています。高専で機械工学、技科大で材料工学を学んだのち、メーカーで温度センサーの材料開発・生産に従事。その後ITの技術にひかれ、31才でIT業界へ転職。運用・テクニカルサポートからキャリアをスタートし、AWSクラウドサーバー構築、Webページ作成、Python/djangoのツール改修など、インフラからフロントサイドまで幅広く業務を経験してきました。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Works -->
+<section id="works" class="py-20 bg-white">
+  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Work</h2>
+  <p class="text-center font-bold mb-12">【過去の制作物をご紹介いたします。】</p>
+  <ul class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <li class="bg-white shadow-md hover:shadow-lg transition works-img">
+      <a href="#!">
+        <img src="./img/card-img01@2x.jpg" alt="" class="w-full h-56 object-cover">
+        <p class="text-center p-4">The Sample App 1（Twitterのようなサンプルサイト）</p>
+      </a>
+    </li>
+    <li class="bg-white shadow-md hover:shadow-lg transition works-img">
+      <a href="#!">
+        <img src="./img/card-img02@2x.jpg" alt="" class="w-full h-56 object-cover">
+        <p class="text-center p-4">クラウドWebサーバー構築</p>
+      </a>
+    </li>
+    <li class="bg-white shadow-md hover:shadow-lg transition works-img">
+      <a href="#!">
+        <img src="./img/card-img02@2x.jpg" alt="" class="w-full h-56 object-cover">
+        <p class="text-center p-4">Ogiwara's Portfolio</p>
+      </a>
+    </li>
+    <li class="bg-white shadow-md hover:shadow-lg transition works-img">
+      <a href="#!">
+        <img src="./img/card-img02@2x.jpg" alt="" class="w-full h-56 object-cover">
+        <p class="text-center p-4">Ogiwara's blog(Googleマップの経路検索アプリ)</p>
+      </a>
+    </li>
+    <li class="bg-white shadow-md hover:shadow-lg transition works-img">
+      <a href="#!">
+        <img src="./img/card-img02@2x.jpg" alt="" class="w-full h-56 object-cover">
+        <p class="text-center p-4">Ogiwara's Contact Page</p>
+      </a>
+    </li>
+    <li class="bg-white shadow-md hover:shadow-lg transition works-img">
+      <a href="#!">
+        <img src="./img/card-img02@2x.jpg" alt="" class="w-full h-56 object-cover">
+        <p class="text-center p-4">Ogiwara's Portfolio Page</p>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-white">
+  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Contact</h2>
+  <p class="text-center font-bold mb-12">【お問い合わせ】</p>
+  <div class="max-w-lg mx-auto">
+    <form action="https://formspree.io/f/myyydzrd" method="POST" class="space-y-6">
+      <div>
+        <label for="name" class="block text-lg font-bold">お名前</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded">
       </div>
-    </section>
-
-    <!-- Works -->
-    <section id="works" class="py-20 bg-white">
-      <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Portfolio</h2>
-      <div class="max-w-4xl mx-auto flex flex-wrap justify-center space-x-6 bg-orange-300">
-        <div class="max-w-xs">
-          <img src="img/job-5382501_1280.jpg" alt="" class="w-full h-auto">
-          <h3 class="text-center text-2xl font-bold">作品1</h3>
-        </div>
-        <div class="max-w-xs">
-          <img src="img/desk-3139127_1280.jpg" alt="" class="w-full h-auto">
-          <h3 class="text-center text-2xl font-bold">作品2</h3>
-        </div>
-        <div class="max-w-xs">
-          <img src="img/workplace-5517744_1280.jpg" alt="" class="w-full h-auto">
-          <h3 class="text-center text-2xl font-bold">作品3</h3>
-        </div>
+      <div>
+        <label for="email" class="block text-lg font-bold">メールアドレス</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded">
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-20 bg-white">
-      <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Contact</h2>
-      <div class="max-w-2xl mx-auto">
-        <form action="#" class="font-bold bg-orange-300">
-          <div class="mb-4">
-            <label for="name" class="block text-lg mb-2">お名前</label>
-            <input type="text" id="name" name="name" class="w-full p-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-          </div>
-          <div class="mb-4">
-            <label for="email" class="block text-lg mb-2">メールアドレス</label>
-            <input type="email" id="email" name="email" class="w-full p-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-          </div>
-          <div class="mb-4">
-            <label for="message" class="block text-lg mb-2">メッセージ</label>
-            <textarea id="message" name="message" rows="5" class="w-full p-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="px-4 py-2 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-600">送信する</button>
-          </div>
-        </form>
+      <div>
+        <label for="message" class="block text-lg font-bold">メッセージ</label>
+        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border rounded"></textarea>
       </div>
-    </section>
+      <button type="submit" class="block mx-auto bg-gray-700 text-white py-2 px-6 rounded-md hover:bg-gray-600">送信</button>
+    </form>
+  </div>
+</section>
+</main>
 
-  </main>
-
-  <footer class="py-8 bg-green-300 text-center">
-    <p class="font-bold">&copy; Ogiwara 2023</p>
-  </footer>
+<!-- footer -->
+<footer class="py-6 bg-gray-800 text-center text-white">
+<small>&copy; cresta.design all rights reserved</small>
+</footer>
 
 </body>
 </html>
