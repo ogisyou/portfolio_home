@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        noto: ['"Noto Serif JP"', 'serif'], // Google Fontsで指定したフォントファミリーを追加
+      },
+    },
   },
   plugins: [],
 }
