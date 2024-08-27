@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   $win.on('load scroll', function() {
     var value = $(this).scrollTop();
-    if ($win.width() > 768) {
+    if ($win.width() > 640) {
       if (value > fvHeight) {
         $header.addClass(fixedClass);
       } else {
@@ -31,7 +31,7 @@ $(document).ready(function() {
       $burgerBtn = $('.burger-btn');
 
   $win.on('resize', function() {
-    if ($win.width() > 768) {
+    if ($win.width() > 640) {
       $headerNav.show();
     } else {
       if (!$burgerBtn.hasClass('cross')) {
