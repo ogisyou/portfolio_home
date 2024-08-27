@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* output.css */
+#mobile-menu.show {
+  transform: translateX(0);
+}
