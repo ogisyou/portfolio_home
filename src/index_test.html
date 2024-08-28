@@ -26,60 +26,58 @@
   </div>
     
 
-    
-    
-  <!-- header -->
-  <header class=" header dark:bg-dark-bg">
-    <div class="container mx-auto flex justify-between items-center bg-white dark:bg-dark-bg dark:text-dark-text">
-      <div class="flex items-center space-x-5">
-        <div><a href="#"><img src="img/icon.png" alt="logo"></a></div>
-        <div class="text-2xl font-bold hidden lg:block"><a href="#">Ogiwara Portfolio</a></div>
-      </div>
-      <nav>
-        <ul class="sm:flex space-x-10 font-bold  hidden">
-          <li><a href="#" class="hover:text-gray-500">トップ</a></li>
-          <li><a href="#profile" class="hover:text-gray-500">プロフィール</a></li>
-          <li><a href="#works" class="hover:text-gray-500">ポートフォリオ</a></li>
-          <li><a href="#contact" class="hover:text-gray-500">連絡先</a></li>
-          <li>
-            <div class="flex items-center">
-              <div id="switch" class="w-16 h-8 bg-gray-300 rounded-full relative cursor-pointer">
-                <img id="switchBall" src="img/light.png" alt="Switch Ball" class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full">
-              </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <div class="sm:hidden">
-        <i class="fa-solid fa-bars text-3xl mr-9 cursor-pointer"></i>
-      </div>
+<!-- header -->
+<header class="header dark:bg-dark-bg">
+  <div class="container mx-auto flex justify-between items-center bg-white dark:bg-dark-bg dark:text-dark-text">
+    <div class="flex items-center space-x-5">
+      <div><a href="#"><img src="img/icon.png" alt="logo"></a></div>
+      <div class="text-2xl font-bold hidden lg:block"><a href="#">Ogiwara Portfolio</a></div>
     </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 bg-white text-black transform -translate-x-full transition-transform duration-300 ease-in-out z-10">
-    <div class="relative h-screen flex flex-col justify-center items-center">
-      <!-- 閉じるボタン -->
-      <button id="close-menu" class="absolute top-4 right-4 text-3xl font-bold text-gray-500 hover:text-gray-800 focus:outline-none">
-        &times;
-      </button>
-      
-      <ul class="space-y-10 text-xl font-bold text-center">
-        <li><a href="#" class="block hover:text-gray-300">トップ</a></li>
-        <li><a href="#profile" class="block hover:text-gray-300">プロフィール</a></li>
-        <li><a href="#works" class="block hover:text-gray-300">ポートフォリオ</a></li>
-        <li><a href="#contact" class="block hover:text-gray-300">連絡先</a></li>
+    <nav>
+      <ul class="sm:flex space-x-10 font-bold hidden">
+        <li><a href="#" class="hover:text-gray-500">トップ</a></li>
+        <li><a href="#profile" class="hover:text-gray-500">プロフィール</a></li>
+        <li><a href="#works" class="hover:text-gray-500">ポートフォリオ</a></li>
+        <li><a href="#contact" class="hover:text-gray-500">連絡先</a></li>
+        <li>
+          <div class="flex items-center">
+            <div id="header-switch" class="w-16 h-8 bg-gray-300 rounded-full relative cursor-pointer">
+              <img id="header-switchBall" src="img/light.png" alt="Switch Ball" class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full">
+            </div>
+          </div>
+        </li>
       </ul>
-
-      <div class="switch-container flex justify-center items-center mt-10">
-        <div id="switch" class="w-switch-width h-8 bg-switch-bg rounded-full relative cursor-pointer border-switch-border border transition-colors duration-300">
-          <img id="switchBall" class="w-switch-ball-width h-switch-ball-width bg-switch-ball-bg rounded-full absolute top-2 left-2 transition-transform duration-300" src="img/light.png" alt="Switch Ball">
-        </div>
-      </div>
-      
-      
+    </nav>
+    <div class="sm:hidden">
+      <i class="fa-solid fa-bars text-3xl mr-9 cursor-pointer"></i>
     </div>
   </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="dark:bg-dark-bg dark:text-dark-text fixed inset-0 bg-white text-black transform -translate-x-full transition-transform duration-300 ease-in-out z-10">
+  <div class="relative h-screen flex flex-col justify-center items-center">
+    <!-- 閉じるボタン -->
+    <button id="close-menu" class="absolute top-4 right-4 text-3xl font-bold text-gray-500 hover:text-gray-800 focus:outline-none">
+      &times;
+    </button>
+    
+    <ul class="space-y-10 text-xl font-bold text-center">
+      <li><a href="#" class="block hover:text-gray-300">トップ</a></li>
+      <li><a href="#profile" class="block hover:text-gray-300">プロフィール</a></li>
+      <li><a href="#works" class="block hover:text-gray-300">ポートフォリオ</a></li>
+      <li><a href="#contact" class="block hover:text-gray-300">連絡先</a></li>
+    </ul>
+
+    <div class="switch-container mt-10">
+      <div id="mobile-switch" class="w-16 h-8 bg-gray-300 rounded-full relative cursor-pointer">
+        <img id="mobile-switchBall" src="img/light.png" alt="Switch Ball" class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full">
+      </div>
+    </div>
+  
+  </div>
+</div>
+
 
   <!-- main -->
   <main>

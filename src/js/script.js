@@ -15,35 +15,38 @@ $(document).ready(function() {
     /*
   Burger menu
   ================================================ */
-  // ハンバーガーメニューのボタン
-  const menuButton = $('.fa-bars');
-  // メニューを閉じるボタン
-  const closeButton = $('#close-menu');
-  // メニュー要素
-  const mobileMenu = $('#mobile-menu');
-
-  // メニューを開く
-  menuButton.click(function() {
-    mobileMenu.removeClass('-translate-x-full'); // メニューを開く
-  });
-
-  // メニューを閉じる
-// メニューのリンクをクリックした際にメニューを閉じつつ、アンカーリンクが機能するようにする
-$('#mobile-menu a').click(function() {
-  mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
-});
-
-
-  // メニュー以外をクリックした場合に閉じる
-  $(document).click(function(event) {
-    if (!$(event.target).closest('#mobile-menu, .fa-bars').length) {
-      if (!mobileMenu.hasClass('-translate-x-full')) {
-        mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+  $(document).ready(function() {
+    // ハンバーガーメニューのボタン
+    const menuButton = $('.fa-bars');
+    const closeButton = $('#close-menu');
+    const mobileMenu = $('#mobile-menu');
+  
+    // メニューを開く
+    menuButton.click(function() {
+      mobileMenu.removeClass('-translate-x-full'); // メニューを開く
+    });
+  
+    // メニューを閉じる（閉じるボタンをクリック）
+    closeButton.click(function() {
+      mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+    });
+  
+    // メニューのリンクをクリックした際にメニューを閉じつつ、アンカーリンクが機能するようにする
+    $('#mobile-menu a').click(function() {
+      mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+    });
+  
+    // メニュー以外をクリックした場合に閉じる
+    $(document).click(function(event) {
+      if (!$(event.target).closest('#mobile-menu, .fa-bars').length) {
+        if (!mobileMenu.hasClass('-translate-x-full')) {
+          mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+        }
       }
-    }
+    });
   });
+  
 });
-
 
 
   /*
@@ -108,20 +111,27 @@ window.addEventListener('load', () => {
 
 
 // ライトモード・ダークモード切り替え
-const switchElement = document.getElementById('switch');
-const switchBall = document.getElementById('switchBall');
 
-switchElement.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  
-  // スイッチの状態を確認し、クラスをトグル
-  const isOn = switchElement.classList.toggle('on');
-  
-  // スイッチボールの位置を変更
-  switchBall.style.transform = isOn ? `translateX(30px)` : `translateX(0)`;
-  
-  // スイッチボールの画像を変更
-  switchBall.src = isOn ? 'img/dark.png' : 'img/light.png';
+// ヘッダーのスイッチ
+const headerSwitchElement = document.getElementById('header-switch');
+const headerSwitchBall = document.getElementById('header-switchBall');
+
+headerSwitchElement.addEventListener('click', () => {
+  document.body.classList.toggle('dark'); // ダークモードをトグル
+  const isOn = headerSwitchElement.classList.toggle('on');
+  headerSwitchBall.style.transform = isOn ? `translateX(30px)` : `translateX(0)`;
+  headerSwitchBall.src = isOn ? 'img/dark.png' : 'img/light.png';
+});
+
+// モバイルメニューのスイッチ
+const mobileSwitchElement = document.getElementById('mobile-switch');
+const mobileSwitchBall = document.getElementById('mobile-switchBall');
+
+mobileSwitchElement.addEventListener('click', () => {
+  document.body.classList.toggle('dark'); // ダークモードをトグル
+  const isOn = mobileSwitchElement.classList.toggle('on');
+  mobileSwitchBall.style.transform = isOn ? `translateX(30px)` : `translateX(0)`;
+  mobileSwitchBall.src = isOn ? 'img/dark.png' : 'img/light.png';
 });
 
 
@@ -204,3 +214,4 @@ const worksObserver = new IntersectionObserver(showWorks);
 items.forEach(item => worksObserver.observe(item));
 
 });
+
