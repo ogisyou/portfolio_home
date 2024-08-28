@@ -17,45 +17,45 @@ $(document).ready(function() {
     }
   });
 
-  // slider
-  $('.slider').slick({
-    autoplay: true,
-    autoplaySpeed: 2000,
-    speed: 1000,
-    fade: true,
-    cssEase: 'linear'
-  });
+//   // slider
+//   $('.slider').slick({
+//     autoplay: true,
+//     autoplaySpeed: 2000,
+//     speed: 1000,
+//     fade: true,
+//     cssEase: 'linear'
+//   });
 
-  // ハンバーガーメニューの開閉とリサイズ対応
-  var $headerNav = $('.header-nav'),
-      $burgerBtn = $('.burger-btn');
+//   // ハンバーガーメニューの開閉とリサイズ対応
+//   var $headerNav = $('.header-nav'),
+//       $burgerBtn = $('.burger-btn');
 
-  $win.on('resize', function() {
-    if ($win.width() > 640) {
-      $headerNav.show();
-    } else {
-      if (!$burgerBtn.hasClass('cross')) {
-        $headerNav.hide();
-      }
-    }
-  });
+//   $win.on('resize', function() {
+//     if ($win.width() > 640) {
+//       $headerNav.show();
+//     } else {
+//       if (!$burgerBtn.hasClass('cross')) {
+//         $headerNav.hide();
+//       }
+//     }
+//   });
 
-  $burgerBtn.on('click', function() {
-    $headerNav.fadeToggle(300);
-    $burgerBtn.toggleClass('cross');
-    $('body').toggleClass('noscroll');
-  });
+//   $burgerBtn.on('click', function() {
+//     $headerNav.fadeToggle(300);
+//     $burgerBtn.toggleClass('cross');
+//     $('body').toggleClass('noscroll');
+//   });
 
-  // メニューリンクのクリックイベント
-  $('.header-nav a').on('click', function() {
-    // ハンバーガーメニューが表示されている場合だけ閉じる
-    if ($burgerBtn.hasClass('cross')) {
-      $headerNav.fadeOut(300);
-      $burgerBtn.removeClass('cross');
-      $('body').removeClass('noscroll');
-    }
-  });
-});
+//   // メニューリンクのクリックイベント
+//   $('.header-nav a').on('click', function() {
+//     // ハンバーガーメニューが表示されている場合だけ閉じる
+//     if ($burgerBtn.hasClass('cross')) {
+//       $headerNav.fadeOut(300);
+//       $burgerBtn.removeClass('cross');
+//       $('body').removeClass('noscroll');
+//     }
+//   });
+// });
 
 // ローディング画面の処理
 window.addEventListener('load', () => {
@@ -167,3 +167,5 @@ const showWorks = (entries, observer) => {
 
 const worksObserver = new IntersectionObserver(showWorks);
 items.forEach(item => worksObserver.observe(item));
+
+});
