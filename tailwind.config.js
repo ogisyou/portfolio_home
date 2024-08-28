@@ -1,28 +1,35 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // ダークモードをクラスベースで使用する
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
       fontFamily: {
-        noto: ['"Noto Serif JP"', 'serif'], // Google Fontsで指定したフォントファミリーを追加
+        noto: ['"Noto Serif JP"', 'serif'],
       },
       spacing: {
-        'switch-width': '60px', // スイッチの幅
-        'switch-ball-width': '26px', // スイッチボールの幅
-        'switch-ball-offset': '2px', // スイッチボールの位置
-        'switch-ball-move': '30px', // スイッチボールの移動量
+        'switch-width': '60px',
+        'switch-ball-width': '26px',
+        'switch-ball-offset': '2px',
+        'switch-ball-move': '30px',
       },
       colors: {
-        'switch-bg': '#F1F1F1', // スイッチの背景色
-        'switch-bg-active': '#2F2F2F', // アクティブ時のスイッチ背景色
-        'switch-ball-bg': '#fff', // スイッチボールの背景色
+        'switch-bg': '#F1F1F1',
+        'switch-bg-active': '#2F2F2F',
+        'switch-ball-bg': '#fff',
+        // ダークモード用の色を追加
+        'dark-bg': '#000000',
+        'dark-text': '#dddddd',
+        'light-text': '#ffffff',
       },
       borderWidth: {
-        'switch-border': '1px', // スイッチのボーダー幅
+        'switch-border': '1px',
       },
       borderColor: {
-        'switch-border': '#fff', // スイッチのボーダー色
-      }
+        'switch-border': '#fff',
+        // ダークモードのborder-bottomの色を白に設定
+        'dark-border-bottom': '#ffffff', 
+      },
     },
   },
   plugins: [],

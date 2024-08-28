@@ -19,9 +19,6 @@
 
 
     <!-- ローディング画面 -->
-<!-- ローディング画面 -->
-  <!-- ローディング画面 -->
-  <!-- ローディング画面 -->
   <div class="loading fixed inset-0 bg-black grid place-items-center z-[9998]">
     <div class="loading-screen bg-white fixed inset-0 z-[9997] flex items-center justify-center">
       <p class="text-black text-3xl font-bold">Loading...</p>
@@ -32,8 +29,8 @@
     
     
   <!-- header -->
-  <header class=" header bg-red-400">
-    <div class="container mx-auto flex justify-between items-center border-b bg-white">
+  <header class=" header dark:bg-dark-bg">
+    <div class="container mx-auto flex justify-between items-center bg-white dark:bg-dark-bg dark:text-dark-text">
       <div class="flex items-center space-x-5">
         <div><a href="#"><img src="img/icon.png" alt="logo"></a></div>
         <div class="text-2xl font-bold hidden lg:block"><a href="#">Ogiwara Portfolio</a></div>
@@ -106,10 +103,10 @@
     </div>
 
     <!-- Introduction -->
-    <section class="py-20 bg-white">
-      <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Introduction</h2>
+    <section class="py-20 bg-white dark:bg-dark-bg">
+      <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100 dark:bg-dark-bg dark:text-dark-text dark:border-dark-border-bottom">Introduction</h2>
       <div class="max-w-2xl mx-auto text-center font-bold">
-        <p>
+        <p class="dark:text-dark-text">
           ここは、Ogiawraのポートフォリオサイトです。<br>
           本サイトをご覧になることで私に興味を持って頂けたら幸いです。<br>
           本サイトに掲載している制作物、スキル、実績についてのお問い合わせは、<br>
@@ -120,11 +117,11 @@
     </section>
 
 <!-- Profile -->
-<section id="profile" class="py-20 bg-white">
-  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Profile</h2>
+<section id="profile" class="py-20 bg-white dark:bg-dark-bg">
+  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100 dark:bg-dark-bg dark:text-dark-text dark:border-dark-border-bottom">Profile</h2>
   <div class="max-w-[700px] mx-auto flex flex-col md:flex-row justify-center items-center">
     <img src="img/profile1.png" alt="profile-img" class="w-40 h-40 rounded-full mb-8 md:mb-0 md:mr-12 profile-img-wrapper">
-    <ul class="font-bold space-y-4 text-center md:text-left profile-list">
+    <ul class="font-bold space-y-4 text-center md:text-left profile-list dark:text-dark-text">
       <li>名前: Ogiwara Syouhei</li>
       <li>出身:</li>
       <li>学歴: 法政大学 経済学部</li>
@@ -134,9 +131,9 @@
 </section>
 
 <!-- Works -->
-<section id="works" class="py-20 bg-white">
-  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Work</h2>
-  <p class="text-center font-bold mb-12">【過去の制作物をご紹介いたします。】</p>
+<section id="works" class="py-20 bg-white dark:bg-dark-bg">
+  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100 dark:bg-dark-bg dark:text-dark-text dark:border-dark-border-bottom">Work</h2>
+  <p class="text-center font-bold mb-12 dark:text-dark-text" >【過去の制作物をご紹介いたします。】</p>
   <ul class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <li class="bg-white shadow-md hover:shadow-lg transition works-img">
       <a href="#!">
@@ -178,11 +175,11 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-20 bg-white">
-  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100">Contact</h2>
-  <p class="text-center font-bold mb-12">【お問い合わせ】</p>
+<section id="contact" class="py-20 bg-white dark:bg-dark-bg">
+  <h2 class="text-center text-6xl font-bold mb-12 pb-2 border-b border-black max-w-[1000px] mx-auto bg-gray-100 dark:bg-dark-bg dark:text-dark-text dark:border-dark-border-bottom">Contact</h2>
+  <p class="text-center font-bold mb-12 dark:text-dark-text">【お問い合わせ】</p>
   <div class="max-w-lg mx-auto">
-    <form action="https://formspree.io/f/myyydzrd" method="POST" class="space-y-6">
+    <form action="https://formspree.io/f/myyydzrd" method="POST" class="space-y-6 dark:text-dark-text">
       <div>
         <label for="name" class="block text-lg font-bold">お名前</label>
         <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded">
@@ -195,7 +192,7 @@
         <label for="message" class="block text-lg font-bold">メッセージ</label>
         <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border rounded"></textarea>
       </div>
-      <button type="submit" class="block mx-auto bg-gray-700 text-white py-2 px-6 rounded-md hover:bg-gray-600">送信</button>
+      <button type="submit" class="block mx-auto bg-gray-700 text-white py-2 px-6 rounded-md hover:bg-gray-500">送信</button>
     </form>
   </div>
 </section>

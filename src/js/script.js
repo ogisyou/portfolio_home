@@ -1,3 +1,6 @@
+  /*
+Slider
+  ================================================ */
 $(document).ready(function() {
   // 自動で画像のスライド移動させる
   $('.slider').slick({
@@ -8,6 +11,10 @@ $(document).ready(function() {
     cssEase: 'linear' // アニメーションのイージング
   });
 
+
+    /*
+  Burger menu
+  ================================================ */
   // ハンバーガーメニューのボタン
   const menuButton = $('.fa-bars');
   // メニューを閉じるボタン
@@ -38,6 +45,10 @@ $('#mobile-menu a').click(function() {
 });
 
 
+
+  /*
+  Sticky header
+  ================================================ */
 $(document).ready(function() {
   // sticky header
   var $win = $(window),
@@ -59,7 +70,9 @@ $(document).ready(function() {
 
 
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  /*
+  Loading screen
+  ================================================ */
 
 // ローディング画面の処理
 window.addEventListener('load', () => {
@@ -89,8 +102,9 @@ window.addEventListener('load', () => {
 });
 
 
-
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  /*
+  Darkmode screen
+  ================================================ */
 
 
 // ライトモード・ダークモード切り替え
@@ -98,7 +112,7 @@ const switchElement = document.getElementById('switch');
 const switchBall = document.getElementById('switchBall');
 
 switchElement.addEventListener('click', () => {
-  document.body.classList.toggle('dark-theme');
+  document.body.classList.toggle('dark');
   
   // スイッチの状態を確認し、クラスをトグル
   const isOn = switchElement.classList.toggle('on');
@@ -112,7 +126,9 @@ switchElement.addEventListener('click', () => {
 
 
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  /*
+  Header Section-title stand out
+  ================================================ */
 
 
 // ヘッダーの文字を浮き上がらせる
@@ -157,6 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+  /*
+  Screen enalaregemnt
+  ================================================ */
 // worksの画像を順番に表示
 const items = document.querySelectorAll('.works-img');
 
