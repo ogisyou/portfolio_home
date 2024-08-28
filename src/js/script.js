@@ -16,7 +16,6 @@ $(document).ready(function() {
   Burger menu
   ================================================ */
   $(document).ready(function() {
-    // ハンバーガーメニューのボタン
     const menuButton = $('.fa-bars');
     const closeButton = $('#close-menu');
     const mobileMenu = $('#mobile-menu');
@@ -24,27 +23,32 @@ $(document).ready(function() {
     // メニューを開く
     menuButton.click(function() {
       mobileMenu.removeClass('-translate-x-full'); // メニューを開く
+      $('body').css('overflow', 'hidden'); // スクロールバーを非表示にする
     });
   
     // メニューを閉じる（閉じるボタンをクリック）
     closeButton.click(function() {
       mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+      $('body').css('overflow', ''); // スクロールバーを元に戻す
     });
   
-    // メニューのリンクをクリックした際にメニューを閉じつつ、アンカーリンクが機能するようにする
+    // メニューのリンクをクリックした際にメニューを閉じる
     $('#mobile-menu a').click(function() {
       mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+      $('body').css('overflow', ''); // スクロールバーを元に戻す
     });
   
-    // メニュー以外をクリックした場合に閉じる
+    // メニュー以外をクリックした場合にメニューを閉じる
     $(document).click(function(event) {
       if (!$(event.target).closest('#mobile-menu, .fa-bars').length) {
         if (!mobileMenu.hasClass('-translate-x-full')) {
           mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
+          $('body').css('overflow', ''); // スクロールバーを元に戻す
         }
       }
     });
   });
+  
   
 });
 
