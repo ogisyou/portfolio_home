@@ -99,15 +99,17 @@ const switchBall = document.getElementById('switchBall');
 
 switchElement.addEventListener('click', () => {
   document.body.classList.toggle('dark-theme');
-
-  if (switchBall.src.includes('img/light.png')) {
-    switchBall.src = 'img/dark.png';
-  } else {
-    switchBall.src = 'img/light.png';
-  }
-
-  switchElement.classList.toggle('on');
+  
+  // スイッチの状態を確認し、クラスをトグル
+  const isOn = switchElement.classList.toggle('on');
+  
+  // スイッチボールの位置を変更
+  switchBall.style.transform = isOn ? `translateX(30px)` : `translateX(0)`;
+  
+  // スイッチボールの画像を変更
+  switchBall.src = isOn ? 'img/dark.png' : 'img/light.png';
 });
+
 
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
