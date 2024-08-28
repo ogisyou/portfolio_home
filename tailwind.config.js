@@ -32,5 +32,19 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.no-scrollbar': {
+          '::-webkit-scrollbar': {
+            display: 'none',  // WebKitベースのブラウザでスクロールバーを非表示
+          },
+          '-ms-overflow-style': 'none',  // Internet Explorerでスクロールバーを非表示
+          'scrollbar-width': 'none',  // Firefoxでスクロールバーを非表示
+        },
+      };
+
+      addUtilities(newUtilities);
+    }
+  ],
 }
