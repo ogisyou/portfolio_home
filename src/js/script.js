@@ -154,6 +154,43 @@ header.animate({
   duration: 5000,
   easing: 'ease'
 });
+  /*
+  Screen enalaregemnt
+  ================================================ */
+// worksの画像を順番に表示
+const items = document.querySelectorAll('.works-img');
+
+const showWorks = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const item = entry.target;
+      const index = Array.from(items).indexOf(item);
+      const keyframes = {
+        opacity: [0, 1],
+        transform: ['rotateY(180deg)', 'rotateY(0deg)']
+      };
+      const options = {
+        duration: 1000,
+        delay: index * 300,
+        fill: 'forwards'
+      };
+      item.animate(keyframes, options);
+      observer.unobserve(item);
+    }
+  });
+};
+
+const worksObserver = new IntersectionObserver(showWorks);
+items.forEach(item => worksObserver.observe(item));
+
+
+
+// Section-title stand out 
+// ================================================ 
+
+// ここができていない
+// 巨大化はどこいった?
+
 
 // section-titleを下から浮き上がらせる
 document.addEventListener('DOMContentLoaded', () => {
@@ -188,34 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-  /*
-  Screen enalaregemnt
-  ================================================ */
-// worksの画像を順番に表示
-const items = document.querySelectorAll('.works-img');
-
-const showWorks = (entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const item = entry.target;
-      const index = Array.from(items).indexOf(item);
-      const keyframes = {
-        opacity: [0, 1],
-        transform: ['rotateY(180deg)', 'rotateY(0deg)']
-      };
-      const options = {
-        duration: 1000,
-        delay: index * 300,
-        fill: 'forwards'
-      };
-      item.animate(keyframes, options);
-      observer.unobserve(item);
-    }
-  });
-};
-
-const worksObserver = new IntersectionObserver(showWorks);
-items.forEach(item => worksObserver.observe(item));
 
 });
 
