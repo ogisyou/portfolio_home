@@ -48,13 +48,13 @@ $(document).ready(function() {
 
   $win.on('load scroll', function() {
     var value = $(this).scrollTop();
-    if ($win.width() > 640) {
+ 
       if (value > fvHeight) {
         $header.addClass(fixedClass);
       } else {
         $header.removeClass(fixedClass);
       }
-    }
+    
   });
 
 
