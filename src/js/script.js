@@ -189,8 +189,6 @@ items.forEach(item => worksObserver.observe(item));
 // ================================================ 
 
 // ここができていない
-// 巨大化はどこいった?
-
 
 // section-titleを下から浮き上がらせる
 document.addEventListener('DOMContentLoaded', () => {

@@ -1108,6 +1108,16 @@ video {
   z-index: 1000;
 }
 
+.works-img {
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: opacity 1s, transform 1s;
+}
+
+.works-img:hover {
+  scale: 1.10;
+}
+
 .hover\:z-50:hover {
   z-index: 50;
 }
@@ -1246,7 +1256,3 @@ video {
     line-height: 1;
   }
 }
-
-
-
-

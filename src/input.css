@@ -16,4 +16,12 @@
 
 
 
+.works-img {
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: opacity 1s, transform 1s;
+}
 
+.works-img:hover {
+  scale: 1.10;
+}
