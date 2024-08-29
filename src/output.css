@@ -1108,14 +1108,32 @@ video {
   z-index: 1000;
 }
 
+/* Tailwindのユーティリティクラスを使ってカスタムアニメーションを追加 */
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(180deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
 .works-img {
   opacity: 0;
   transform: rotateY(180deg);
-  transition: opacity 1s, transform 1s;
+  transition: transform 1s;
 }
 
-.works-img:hover {
-  scale: 1.10;
+.works-img.revealed {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.works-img.hovered {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out;
 }
 
 .section-title{

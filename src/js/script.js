@@ -159,30 +159,35 @@ $(document).ready(function() {
   Screen enalaregemnt
   ================================================ */
 // worksの画像を順番に表示
-const items = document.querySelectorAll('.works-img');
+$(document).ready(function() {
+  const $items = $('.works-img');
 
-const showWorks = (entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const item = entry.target;
-      const index = Array.from(items).indexOf(item);
-      const keyframes = {
-        opacity: [0, 1],
-        transform: ['rotateY(180deg)', 'rotateY(0deg)']
-      };
-      const options = {
-        duration: 1000,
-        delay: index * 300,
-        fill: 'forwards'
-      };
-      item.animate(keyframes, options);
-      observer.unobserve(item);
-    }
+  const showWorks = () => {
+    $items.each(function(index) {
+      const $item = $(this);
+      const windowHeight = $(window).height();
+      const itemTop = $item.offset().top;
+      const scrollTop = $(window).scrollTop();
+
+      if (scrollTop + windowHeight > itemTop) {
+        setTimeout(function() {
+          $item.addClass('revealed');
+        }, index * 300);
+      }
+    });
+  };
+
+  $(window).on('scroll', showWorks);
+  showWorks();
+
+  // hover拡大効果
+  $items.on('mouseover', function() {
+    $(this).addClass('hovered');
+  }).on('mouseout', function() {
+    $(this).removeClass('hovered');
   });
-};
+});
 
-const worksObserver = new IntersectionObserver(showWorks);
-items.forEach(item => worksObserver.observe(item));
 
 
 // Section-title stand out 
