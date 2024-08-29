@@ -25,3 +25,11 @@
 .works-img:hover {
   scale: 1.10;
 }
+
+
+
+.section-title{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 3s;
+}

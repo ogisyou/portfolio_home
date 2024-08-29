@@ -154,6 +154,8 @@ header.animate({
   duration: 5000,
   easing: 'ease'
 });
+
+
   /*
   Screen enalaregemnt
   ================================================ */
@@ -184,45 +186,37 @@ const worksObserver = new IntersectionObserver(showWorks);
 items.forEach(item => worksObserver.observe(item));
 
 
-
 // Section-title stand out 
 // ================================================ 
-
-// ここができていない
-
 // section-titleを下から浮き上がらせる
-document.addEventListener('DOMContentLoaded', () => {
-  const classList = ['.section-title', '.works-img', '.introduction-text', '.profile-list', '.profile-img-wrapper', '.contact-text', '.form-wrapper'];
 
-  const keyframes = {
-    opacity: [0, 1],
-    transform: ['translateY(50px)', 'translateY(0)']
-  };
-  const options = {
-    duration: 3000,
-    easing: 'ease',
-    fill: 'forwards'
-  };
+const sectionTitleItems = document.querySelectorAll('.section-title'); // 変数名を変更
 
-  classList.forEach(className => {
-    const elements = document.querySelectorAll(className);
-
-    const showElement = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const element = entry.target;
-          element.animate(keyframes, options);
-          observer.unobserve(element);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(showElement, { threshold: 0.1 });
-    elements.forEach(element => observer.observe(element));
+const showSectionTitles = (entries, observer) => { // 関数名を変更
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const item = entry.target;
+      const index = Array.from(sectionTitleItems).indexOf(item); // items を sectionTitleItems に変更
+      const keyframes = {
+        opacity: [0, 1],
+        transform: ['translateY(50px)', 'translateY(0)'] // アニメーションはそのまま
+      };
+      const options = {
+        duration: 3000,
+        easing: 'ease',
+        fill: 'forwards'
+      };
+      item.animate(keyframes, options);
+      observer.unobserve(item);
+    }
   });
+};
+
+const sectionTitleObserver = new IntersectionObserver(showSectionTitles); // 監視用のObserverも変更
+sectionTitleItems.forEach(item => sectionTitleObserver.observe(item)); // items を sectionTitleItems に変更
+
 });
 
 
 
-});
 
