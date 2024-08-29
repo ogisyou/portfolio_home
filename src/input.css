@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* output.css */
 #mobile-menu.show {
   transform: translateX(0);
@@ -14,7 +16,9 @@
   z-index: 1000; 
 }
 
-/* CSSアニメーションの定義 */
+
+
+/* loading screen css */
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
@@ -32,10 +36,8 @@
   100% { opacity: 0; }
 }
 
-
-/* アニメーションの適用 */
 .fadeOut {
-  animation: fadeOut 1.5s ease forwards;
+  animation: fadeOut 2s ease forwards;
 }
 
 .slideInOut {
@@ -43,18 +45,8 @@
 }
 
 .textFadeOut {
-  animation: textFadeOut 1.2s ease forwards;
+  animation: textFadeOut 1s ease forwards;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

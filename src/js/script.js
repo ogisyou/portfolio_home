@@ -81,34 +81,29 @@ $(document).ready(function() {
   Loading screen
   ================================================ */
 
-  // うまくできていない？？？？？？？？？？
-
   $(window).on('load', function() {
-    const $loadingAreaGrey = $('.loading');
-    const $loadingAreaGreen = $('.loading-screen');
-    const $loadingText = $('.loading p');
+    const $loadingAreaBlack = $('.loading');
+    const $loadingAreaWhite = $('.loading-screen');
+    const $loadingText = $('.loading-screen p');
   
     // ローディング中（ブラック）
     setTimeout(function() {
-      $loadingAreaGrey.addClass('fadeOut');
+      $loadingAreaBlack.addClass('fadeOut');
       setTimeout(function() {
-        $loadingAreaGrey.css('visibility', 'hidden');
+        $loadingAreaBlack.css('visibility', 'hidden');
       }, 2000); // アニメーションの時間に合わせる
     }, 1200); // ディレイ時間
   
     // ローディング中（ホワイト）
     setTimeout(function() {
-      $loadingAreaGreen.addClass('slideInOut');
+      $loadingAreaWhite.addClass('slideInOut');
     }, 800); // ディレイ時間
   
     // ローディング中テキスト
     $loadingText.addClass('textFadeOut');
   });
   
-
   
-
-
   /*
   Darkmode screen
   ================================================ */
@@ -130,7 +125,7 @@ $(document).ready(function() {
 
 
   /*
-  Header Section-title stand out
+  Header stand out
   ================================================ */
 
 
@@ -188,8 +183,12 @@ $(document).ready(function() {
 
 
 
-// Section-title stand out 
-// ================================================ 
+
+  /*
+Section-title stand out 
+  ================================================ */
+
+
 // section-titleを下から浮き上がらせる
 
 $(document).ready(function() {

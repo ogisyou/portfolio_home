@@ -1128,7 +1128,7 @@ video {
   z-index: 1000;
 }
 
-/* CSSアニメーションの定義 */
+/* loading screen css */
 
 @keyframes fadeOut {
   from {
@@ -1168,8 +1168,6 @@ video {
   }
 }
 
-/* アニメーションの適用 */
-
 .fadeOut {
   animation: fadeOut 2s ease forwards;
 }
@@ -1179,7 +1177,7 @@ video {
 }
 
 .textFadeOut {
-  animation: textFadeOut 1.2s ease forwards;
+  animation: textFadeOut 1s ease forwards;
 }
 
 /* Tailwindのユーティリティクラスを使ってカスタムアニメーションを追加 */
