@@ -81,6 +81,8 @@ $(document).ready(function() {
   Loading screen
   ================================================ */
 
+  // うまくできていない？？？？？？？？？？
+
 // ローディング画面の処理
 window.addEventListener('load', () => {
   const loadingAreaGrey = document.querySelector('.loading');
@@ -113,30 +115,19 @@ window.addEventListener('load', () => {
   Darkmode screen
   ================================================ */
 
+  // ヘッダーのスイッチ
+  $('#header-switch').on('click', function() {
+    $('body').toggleClass('dark'); // ダークモードをトグル
+    const isOn = $(this).toggleClass('on').hasClass('on');
+    $('#header-switchBall').css('transform', isOn ? 'translateX(30px)' : 'translateX(0)').attr('src', isOn ? 'img/dark.png' : 'img/light.png');
+  });
 
-// ライトモード・ダークモード切り替え
-
-// ヘッダーのスイッチ
-const headerSwitchElement = document.getElementById('header-switch');
-const headerSwitchBall = document.getElementById('header-switchBall');
-
-headerSwitchElement.addEventListener('click', () => {
-  document.body.classList.toggle('dark'); // ダークモードをトグル
-  const isOn = headerSwitchElement.classList.toggle('on');
-  headerSwitchBall.style.transform = isOn ? `translateX(30px)` : `translateX(0)`;
-  headerSwitchBall.src = isOn ? 'img/dark.png' : 'img/light.png';
-});
-
-// モバイルメニューのスイッチ
-const mobileSwitchElement = document.getElementById('mobile-switch');
-const mobileSwitchBall = document.getElementById('mobile-switchBall');
-
-mobileSwitchElement.addEventListener('click', () => {
-  document.body.classList.toggle('dark'); // ダークモードをトグル
-  const isOn = mobileSwitchElement.classList.toggle('on');
-  mobileSwitchBall.style.transform = isOn ? `translateX(30px)` : `translateX(0)`;
-  mobileSwitchBall.src = isOn ? 'img/dark.png' : 'img/light.png';
-});
+  // モバイルメニューのスイッチ
+  $('#mobile-switch').on('click', function() {
+    $('body').toggleClass('dark'); // ダークモードをトグル
+    const isOn = $(this).toggleClass('on').hasClass('on');
+    $('#mobile-switchBall').css('transform', isOn ? 'translateX(30px)' : 'translateX(0)').attr('src', isOn ? 'img/dark.png' : 'img/light.png');
+  });
 
 
 
@@ -146,13 +137,21 @@ mobileSwitchElement.addEventListener('click', () => {
 
 
 // ヘッダーの文字を浮き上がらせる
-const header = document.querySelector('.header');
-header.animate({
-  opacity: [0, 1],
-  translate: ['0 -50px', 0]
-}, {
-  duration: 5000,
-  easing: 'ease'
+$(document).ready(function() {
+  const startValue = -50; // 初期のY軸の位置
+  const endValue = 0;     // 最終のY軸の位置
+
+  $({ y: startValue, opacity: 0 }).animate({ y: endValue, opacity: 1 }, {
+    duration: 5000,
+    easing: 'swing',  // easingを設定する
+    step: function(now, fx) {
+      if (fx.prop === 'y') {
+        $('.header').css('transform', 'translateY(' + now + 'px)');
+      } else if (fx.prop === 'opacity') {
+        $('.header').css('opacity', now);
+      }
+    }
+  });
 });
 
 
