@@ -4,6 +4,14 @@
 
 
 
+
+/*Darkmode body*/
+body.dark {
+  background-color: #000000 !important; 
+}
+
+
+
 /* Burger menu */
 #mobile-menu.show {
   transform: translateX(0);
@@ -50,7 +58,6 @@
 .textFadeOut {
   animation: textFadeOut 1s ease forwards;
 }
-
 
 
 

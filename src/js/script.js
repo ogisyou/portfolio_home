@@ -107,20 +107,22 @@ $(document).ready(function() {
   /*
   Darkmode screen
   ================================================ */
+// ヘッダーのスイッチ
+$('#header-switch').on('click', function() {
+  $('body').toggleClass('dark'); // ダークモードをトグル
+  const isOn = $(this).toggleClass('on').hasClass('on');
+  console.log('Dark mode:', $('body').hasClass('dark')); // デバッグ用
+  $('#header-switchBall').css('transform', isOn ? 'translateX(30px)' : 'translateX(0)').attr('src', isOn ? 'img/dark.png' : 'img/light.png');
+});
 
-  // ヘッダーのスイッチ
-  $('#header-switch').on('click', function() {
-    $('body').toggleClass('dark'); // ダークモードをトグル
-    const isOn = $(this).toggleClass('on').hasClass('on');
-    $('#header-switchBall').css('transform', isOn ? 'translateX(30px)' : 'translateX(0)').attr('src', isOn ? 'img/dark.png' : 'img/light.png');
-  });
+// モバイルメニューのスイッチ
+$('#mobile-switch').on('click', function() {
+  $('body').toggleClass('dark'); // ダークモードをトグル
+  const isOn = $(this).toggleClass('on').hasClass('on');
+  console.log('Dark mode:', $('body').hasClass('dark')); // デバッグ用
+  $('#mobile-switchBall').css('transform', isOn ? 'translateX(30px)' : 'translateX(0)').attr('src', isOn ? 'img/dark.png' : 'img/light.png');
+});
 
-  // モバイルメニューのスイッチ
-  $('#mobile-switch').on('click', function() {
-    $('body').toggleClass('dark'); // ダークモードをトグル
-    const isOn = $(this).toggleClass('on').hasClass('on');
-    $('#mobile-switchBall').css('transform', isOn ? 'translateX(30px)' : 'translateX(0)').attr('src', isOn ? 'img/dark.png' : 'img/light.png');
-  });
 
 
 
