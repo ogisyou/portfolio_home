@@ -4,11 +4,14 @@
 
 
 
-/* output.css */
+/* Burger menu */
 #mobile-menu.show {
   transform: translateX(0);
 }
 
+
+
+/* Sticky header */
 .fixed {
   position: fixed;
   top: 0;
@@ -18,7 +21,7 @@
 
 
 
-/* loading screen css */
+/* Loading screen css */
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
@@ -52,7 +55,7 @@
 
 
 
-/* Tailwindのユーティリティクラスを使ってカスタムアニメーションを追加 */
+/* Works-img rotate */
 @keyframes rotateY {
   from {
     transform: rotateY(180deg);
@@ -68,6 +71,10 @@
   transition: transform 1s;
 }
 
+
+
+/* Works-img stand out  */
+
 .works-img.revealed {
   opacity: 1;
   transform: rotateY(0deg);
@@ -77,6 +84,10 @@
   transform: scale(1.1);
   transition: transform 0.1s ease-in-out; 
 }
+
+
+
+/* Section-title stand out  */
 
 
 .section-title {

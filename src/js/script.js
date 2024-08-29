@@ -149,7 +149,7 @@ $(document).ready(function() {
 
 
   /*
-  Screen enalaregemnt
+  Works-img Screen enalaregemnt
   ================================================ */
 // worksの画像を順番に表示
 $(document).ready(function() {
@@ -187,7 +187,6 @@ $(document).ready(function() {
   /*
 Section-title stand out 
   ================================================ */
-
 
 // section-titleを下から浮き上がらせる
 
