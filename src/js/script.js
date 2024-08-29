@@ -194,31 +194,23 @@ $(document).ready(function() {
 // ================================================ 
 // section-titleを下から浮き上がらせる
 
-const sectionTitleItems = document.querySelectorAll('.section-title'); // 変数名を変更
+$(document).ready(function() {
+  function checkVisibility() {
+    $('.section-title').each(function() {
+      const $this = $(this);
+      const elementTop = $this.offset().top;
+      const windowTop = $(window).scrollTop();
+      const windowHeight = $(window).height();
 
-const showSectionTitles = (entries, observer) => { // 関数名を変更
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const item = entry.target;
-      const index = Array.from(sectionTitleItems).indexOf(item); // items を sectionTitleItems に変更
-      const keyframes = {
-        opacity: [0, 1],
-        transform: ['translateY(50px)', 'translateY(0)'] // アニメーションはそのまま
-      };
-      const options = {
-        duration: 3000,
-        easing: 'ease',
-        fill: 'forwards'
-      };
-      item.animate(keyframes, options);
-      observer.unobserve(item);
-    }
-  });
-};
+      if (elementTop < windowTop + windowHeight) {
+        $this.addClass('visible');
+      }
+    });
+  }
 
-const sectionTitleObserver = new IntersectionObserver(showSectionTitles); // 監視用のObserverも変更
-sectionTitleItems.forEach(item => sectionTitleObserver.observe(item)); // items を sectionTitleItems に変更
-
+  $(window).on('scroll', checkVisibility);
+  $(window).on('load', checkVisibility); // For initial load
+});
 });
 
 

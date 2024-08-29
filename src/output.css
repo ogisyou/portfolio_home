@@ -588,6 +588,10 @@ video {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1136,10 +1140,15 @@ video {
   transition: transform 0.1s ease-in-out;
 }
 
-.section-title{
+.section-title {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1s, transform 3s;
+  transition: opacity 3s ease, transform 3s ease;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hover\:z-50:hover {
