@@ -83,32 +83,30 @@ $(document).ready(function() {
 
   // うまくできていない？？？？？？？？？？
 
-// ローディング画面の処理
-window.addEventListener('load', () => {
-  const loadingAreaGrey = document.querySelector('.loading');
-  const loadingAreaGreen = document.querySelector('.loading-screen');
-  const loadingText = document.querySelector('.loading p');
+  $(window).on('load', function() {
+    const $loadingAreaGrey = $('.loading');
+    const $loadingAreaGreen = $('.loading-screen');
+    const $loadingText = $('.loading p');
+  
+    // ローディング中（ブラック）
+    setTimeout(function() {
+      $loadingAreaGrey.addClass('fadeOut');
+      setTimeout(function() {
+        $loadingAreaGrey.css('visibility', 'hidden');
+      }, 2000); // アニメーションの時間に合わせる
+    }, 1200); // ディレイ時間
+  
+    // ローディング中（ホワイト）
+    setTimeout(function() {
+      $loadingAreaGreen.addClass('slideInOut');
+    }, 800); // ディレイ時間
+  
+    // ローディング中テキスト
+    $loadingText.addClass('textFadeOut');
+  });
+  
 
-  // ローディング中（ブラック）
-  loadingAreaGrey.animate(
-    { opacity: [1, 0] },
-    { duration: 2000, delay: 1200, easing: 'ease', fill: 'forwards' }
-  ).onfinish = () => {
-    loadingAreaGrey.style.visibility = 'hidden';
-  };
-
-  // ローディング中（ホワイト）
-  loadingAreaGreen.animate(
-    { transform: ['translateY(100vh)', 'translateY(0)', 'translateY(-100vh)'] },
-    { duration: 2000, delay: 800, easing: 'ease', fill: 'forwards' }
-  );
-
-  // ローディング中テキスト
-  loadingText.animate(
-    [{ opacity: 1, offset: 0.8 }, { opacity: 0, offset: 1 }],
-    { duration: 1200, easing: 'ease', fill: 'forwards' }
-  );
-});
+  
 
 
   /*

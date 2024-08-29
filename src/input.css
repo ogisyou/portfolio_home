@@ -14,6 +14,50 @@
   z-index: 1000; 
 }
 
+/* CSSアニメーションの定義 */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideInOut {
+  0% { transform: translateY(100vh); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
+
+@keyframes textFadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/* アニメーションの適用 */
+.fadeOut {
+  animation: fadeOut 1.5s ease forwards;
+}
+
+.slideInOut {
+  animation: slideInOut 2s ease forwards;
+}
+
+.textFadeOut {
+  animation: textFadeOut 1.2s ease forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Tailwindのユーティリティクラスを使ってカスタムアニメーションを追加 */

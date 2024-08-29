@@ -620,12 +620,12 @@ video {
   left: 0.25rem;
 }
 
-.left-28 {
-  left: 7rem;
+.left-20 {
+  left: 5rem;
 }
 
-.left-32 {
-  left: 8rem;
+.left-28 {
+  left: 7rem;
 }
 
 .right-4 {
@@ -638,26 +638,6 @@ video {
 
 .top-4 {
   top: 1rem;
-}
-
-.-left-28 {
-  left: -7rem;
-}
-
-.bottom-72 {
-  bottom: 18rem;
-}
-
-.-left-32 {
-  left: -8rem;
-}
-
-.left-44 {
-  left: 11rem;
-}
-
-.left-24 {
-  left: 6rem;
 }
 
 .z-10 {
@@ -969,6 +949,11 @@ video {
   padding: 1.75rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -992,11 +977,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .pb-2 {
@@ -1049,6 +1029,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1067,11 +1052,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .font-bold {
@@ -1146,6 +1126,60 @@ video {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+/* CSSアニメーションの定義 */
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInOut {
+  0% {
+    transform: translateY(100vh);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes textFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* アニメーションの適用 */
+
+.fadeOut {
+  animation: fadeOut 2s ease forwards;
+}
+
+.slideInOut {
+  animation: slideInOut 2s ease forwards;
+}
+
+.textFadeOut {
+  animation: textFadeOut 1.2s ease forwards;
 }
 
 /* Tailwindのユーティリティクラスを使ってカスタムアニメーションを追加 */
@@ -1292,11 +1326,6 @@ video {
     font-size: 3.75rem;
     line-height: 1;
   }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1337,11 +1366,6 @@ video {
     font-size: 4.5rem;
     line-height: 1;
   }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1353,13 +1377,13 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lg\:text-6xl {
-    font-size: 3.75rem;
+  .lg\:text-5xl {
+    font-size: 3rem;
     line-height: 1;
   }
 
-  .lg\:text-8xl {
-    font-size: 6rem;
+  .lg\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 
@@ -1368,13 +1392,8 @@ video {
     line-height: 1;
   }
 
-  .lg\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3rem;
+  .lg\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
   }
 }
