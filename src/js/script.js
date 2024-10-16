@@ -205,6 +205,7 @@ Section-title stand out
 });
 
 
+
 /*
   Work Image Modal
   ================================================ */
@@ -212,7 +213,7 @@ Section-title stand out
     const modalHTML = `
       <div id="imageModal" style="display: none; position: fixed; inset: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);">
         <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 1rem; border-radius: 0.5rem; width: 60%; max-width: 1200px; height: 80%; max-height: 90vh; overflow: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-          <img id="modalImage" src="" alt="モーダル画像" style="max-width: 100%; height: auto;">
+          <img id="modalImage" src="" alt="モーダル画像" style="max-width: 100%; height: auto; cursor: pointer;">
           <h3 id="modalTitle" style="margin-top: 1rem; text-align: center; font-weight: bold; font-size: 1.2rem;"></h3>
           <p id="modalDescription" style="margin-top: 1rem; text-align: justify; font-weight: bold;"></p>
           <p id="modalDetailedDescription" style="margin-top: 1rem; text-align: justify;"></p>
@@ -234,19 +235,27 @@ Section-title stand out
     const $closeModal = $('#closeModal');
     const $workItems = $('.works-img');
   
+    let currentItemUrl = '';
+  
     $workItems.on('click', function (e) {
       e.preventDefault();
       const $item = $(this);
       const imgSrc = $item.find('img').attr('src');
       const title = $item.find('.text-lg').text();
-      const description = $item.find('.text-justify').text();
-      const detailedDescription = $item.find('.detailed-description').text();
+      const description = $item.find('.detailed-description').text();
+      currentItemUrl = $item.find('a').attr('href');
   
       $modalImage.attr('src', imgSrc);
       $modalTitle.text(title);
-      $modalDescription.text(description);
-      $modalDetailedDescription.text(detailedDescription);
+      $modalDescription.text($item.find('p:not(.detailed-description)').text());
+      $modalDetailedDescription.text(description);
       $modal.show();
+    });
+  
+    $modalImage.on('click', function() {
+      if (currentItemUrl) {
+        window.open(currentItemUrl, '_blank');
+      }
     });
   
     $closeModal.on('click', function () {
