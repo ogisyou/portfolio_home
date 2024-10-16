@@ -213,4 +213,65 @@ $(document).ready(function() {
 
 
 
+// 既存のコードはそのままで、以下を追加してください
 
+/*
+  Work Image Modal
+  ================================================ */
+ // 既存のコードはそのままで、Work Image Modal部分を以下のように更新してください
+
+/*
+  Work Image Modal
+  ================================================ */
+// 既存のコードはそのままで、Work Image Modal部分を以下のように更新してください
+
+/*
+  Work Image Modal
+  ================================================ */
+  $(document).ready(function() {
+    // モーダル要素を動的に作成
+    const modalHTML = `
+      <div id="imageModal" style="display: none; position: fixed; inset: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);">
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 1rem; border-radius: 0.5rem; max-width: 48rem; max-height: 90vh; overflow: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img id="modalImage" src="" alt="モーダル画像" style="max-width: 100%; height: auto;">
+          <p id="modalDescription" style="margin-top: 1rem; text-align: center;"></p>
+          <button id="closeModal" style="margin-top: 1rem; background-color: #D1D5DB; color: black; font-weight: bold; padding: 0.5rem 1rem; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s;">
+            閉じる
+          </button>
+        </div>
+      </div>
+    `;
+    $('body').append(modalHTML);
+  
+    const $modal = $('#imageModal');
+    const $modalImage = $('#modalImage');
+    const $modalDescription = $('#modalDescription');
+    const $closeModal = $('#closeModal');
+    const $workItems = $('.works-img a');
+  
+    $workItems.on('click', function(e) {
+      e.preventDefault();
+      const imgSrc = $(this).find('img').attr('src');
+      const description = $(this).find('p').text();
+      
+      $modalImage.attr('src', imgSrc);
+      $modalDescription.text(description);
+      $modal.show();
+    });
+  
+    $closeModal.on('click', function() {
+      $modal.hide();
+    });
+  
+    $modal.on('click', function(e) {
+      if (e.target === this) {
+        $modal.hide();
+      }
+    });
+  
+    // ホバー効果を追加
+    $closeModal.hover(
+      function() { $(this).css('background-color', '#9CA3AF'); },
+      function() { $(this).css('background-color', '#D1D5DB'); }
+    );
+  });
