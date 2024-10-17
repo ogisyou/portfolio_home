@@ -5,10 +5,10 @@ $(document).ready(function () {
   // 自動で画像のスライド移動させる
   $('.slider').slick({
     autoplay: true,
-    autoplaySpeed: 2000, // スライド切り替えの間隔（ミリ秒）
-    speed: 1000, // スライド切り替えのアニメーション速度（ミリ秒）
-    fade: true, // フェード効果を有効にする
-    cssEase: 'linear', // アニメーションのイージング
+    autoplaySpeed: 2000, 
+    speed: 1000, 
+    fade: true, 
+    cssEase: 'linear',
   });
 
   /*
@@ -21,28 +21,28 @@ $(document).ready(function () {
 
     // メニューを開く
     menuButton.click(function () {
-      mobileMenu.removeClass('-translate-x-full'); // メニューを開く
-      $('body').css('overflow', 'hidden'); // スクロールバーを非表示にする
+      mobileMenu.removeClass('-translate-x-full'); 
+      $('body').css('overflow', 'hidden'); 
     });
 
     // メニューを閉じる（閉じるボタンをクリック）
     closeButton.click(function () {
-      mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
-      $('body').css('overflow', ''); // スクロールバーを元に戻す
+      mobileMenu.addClass('-translate-x-full');
+      $('body').css('overflow', ''); 
     });
 
     // メニューのリンクをクリックした際にメニューを閉じる
     $('#mobile-menu a').click(function () {
-      mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
-      $('body').css('overflow', ''); // スクロールバーを元に戻す
+      mobileMenu.addClass('-translate-x-full'); 
+      $('body').css('overflow', '');
     });
 
     // メニュー以外をクリックした場合にメニューを閉じる
     $(document).click(function (event) {
       if (!$(event.target).closest('#mobile-menu, .fa-bars').length) {
         if (!mobileMenu.hasClass('-translate-x-full')) {
-          mobileMenu.addClass('-translate-x-full'); // メニューを閉じる
-          $('body').css('overflow', ''); // スクロールバーを元に戻す
+          mobileMenu.addClass('-translate-x-full'); 
+          $('body').css('overflow', ''); 
         }
       }
     });
@@ -84,13 +84,14 @@ $(document).ready(function () {
       $loadingAreaBlack.addClass('fadeOut');
       setTimeout(function () {
         $loadingAreaBlack.css('visibility', 'hidden');
-      }, 2000); // アニメーションの時間に合わせる
-    }, 1200); // ディレイ時間
+      }, 2000); 
+    }, 1200);
 
     // ローディング中（ホワイト）
     setTimeout(function () {
       $loadingAreaWhite.addClass('slideInOut');
-    }, 800); // ディレイ時間
+    }, 800); 
+    
 
     // ローディング中テキスト
     $loadingText.addClass('textFadeOut');
@@ -101,9 +102,9 @@ $(document).ready(function () {
   ================================================ */
   // ヘッダーのスイッチ
   $('#header-switch').on('click', function () {
-    $('body').toggleClass('dark'); // ダークモードをトグル
+    $('body').toggleClass('dark');
     const isOn = $(this).toggleClass('on').hasClass('on');
-    console.log('Dark mode:', $('body').hasClass('dark')); // デバッグ用
+    console.log('Dark mode:', $('body').hasClass('dark')); 
     $('#header-switchBall')
       .css('transform', isOn ? 'translateX(30px)' : 'translateX(0)')
       .attr('src', isOn ? 'img/dark.png' : 'img/light.png');
@@ -111,9 +112,9 @@ $(document).ready(function () {
 
   // モバイルメニューのスイッチ
   $('#mobile-switch').on('click', function () {
-    $('body').toggleClass('dark'); // ダークモードをトグル
+    $('body').toggleClass('dark'); 
     const isOn = $(this).toggleClass('on').hasClass('on');
-    console.log('Dark mode:', $('body').hasClass('dark')); // デバッグ用
+    console.log('Dark mode:', $('body').hasClass('dark')); 
     $('#mobile-switchBall')
       .css('transform', isOn ? 'translateX(30px)' : 'translateX(0)')
       .attr('src', isOn ? 'img/dark.png' : 'img/light.png');
@@ -125,14 +126,14 @@ $(document).ready(function () {
 
   // ヘッダーの文字を浮き上がらせる
   $(document).ready(function () {
-    const startValue = -50; // 初期のY軸の位置
-    const endValue = 0; // 最終のY軸の位置
+    const startValue = -50;
+    const endValue = 0; 
 
     $({ y: startValue, opacity: 0 }).animate(
       { y: endValue, opacity: 1 },
       {
         duration: 5000,
-        easing: 'swing', // easingを設定する
+        easing: 'swing', 
         step: function (now, fx) {
           if (fx.prop === 'y') {
             $('.header').css('transform', 'translateY(' + now + 'px)');
@@ -200,7 +201,7 @@ Section-title stand out
     }
 
     $(window).on('scroll', checkVisibility);
-    $(window).on('load', checkVisibility); // For initial load
+    $(window).on('load', checkVisibility);
   });
 });
 
@@ -217,6 +218,14 @@ Section-title stand out
           <h3 id="modalTitle" style="margin-top: 1rem; text-align: center; font-weight: bold; font-size: 1.2rem;"></h3>
           <p id="modalDescription" style="margin-top: 1rem; text-align: justify; font-weight: bold;"></p>
           <p id="modalDetailedDescription" style="margin-top: 1rem; text-align: justify;"></p>
+          <div id="modalIcons" style="display: none; justify-content: center; margin-top: 1rem;">
+            <a id="githubLink" href="#" target="_blank" style="margin: 0 1rem;">
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a id="demoLink" href="#" target="_blank" style="margin: 0 1rem;">
+              <i class="fas fa-camera fa-2x"></i>
+            </a>
+          </div>
           <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
             <button id="closeModal" style="background-color: #D1D5DB; color: black; font-weight: bold; padding: 0.5rem 1rem; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s;">
               閉じる
@@ -232,10 +241,11 @@ Section-title stand out
     const $modalTitle = $('#modalTitle');
     const $modalDescription = $('#modalDescription');
     const $modalDetailedDescription = $('#modalDetailedDescription');
+    const $modalIcons = $('#modalIcons');
     const $closeModal = $('#closeModal');
     const $workItems = $('.works-img');
-  
-    let currentItemUrl = '';
+    const $githubLink = $('#githubLink');
+    const $demoLink = $('#demoLink');
   
     $workItems.on('click', function (e) {
       e.preventDefault();
@@ -243,19 +253,31 @@ Section-title stand out
       const imgSrc = $item.find('img').attr('src');
       const title = $item.find('.text-lg').text();
       const description = $item.find('.detailed-description').text();
-      currentItemUrl = $item.find('a').attr('href');
+      const githubUrl = $item.find('.github-url').text();
+      const demoUrl = $item.find('.demo-url').text();
   
       $modalImage.attr('src', imgSrc);
       $modalTitle.text(title);
       $modalDescription.text($item.find('p:not(.detailed-description)').text());
       $modalDetailedDescription.text(description);
-      $modal.show();
-    });
   
-    $modalImage.on('click', function() {
-      if (currentItemUrl) {
-        window.open(currentItemUrl, '_blank');
+      if (githubUrl || demoUrl) {
+        $modalIcons.css('display', 'flex');
+        if (githubUrl) {
+          $githubLink.attr('href', githubUrl).show();
+        } else {
+          $githubLink.hide();
+        }
+        if (demoUrl) {
+          $demoLink.attr('href', demoUrl).show();
+        } else {
+          $demoLink.hide();
+        }
+      } else {
+        $modalIcons.hide();
       }
+  
+      $modal.show();
     });
   
     $closeModal.on('click', function () {
