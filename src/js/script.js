@@ -247,14 +247,19 @@ Section-title stand out
     const $githubLink = $('#githubLink');
     const $demoLink = $('#demoLink');
   
+    let currentImageUrl = '';
+    let isPortfolioModal = false;
+  
     $workItems.on('click', function (e) {
       e.preventDefault();
       const $item = $(this);
       const imgSrc = $item.find('img').attr('src');
       const title = $item.find('.text-lg').text();
       const description = $item.find('.detailed-description').text();
-      const githubUrl = $item.find('.github-url').text();
-      const demoUrl = $item.find('.demo-url').text();
+      const githubUrl = $item.find('.github-url').text() || $item.data('github-url');
+      const demoUrl = $item.find('.demo-url').text() || $item.data('demo-url');
+      currentImageUrl = $item.find('.image-url').text();
+      isPortfolioModal = title.trim() === "Ogiwara's Portfolio";
   
       $modalImage.attr('src', imgSrc);
       $modalTitle.text(title);
@@ -278,6 +283,14 @@ Section-title stand out
       }
   
       $modal.show();
+    });
+  
+    $modalImage.on('click', function() {
+      if (isPortfolioModal) {
+        location.reload();
+      } else if (currentImageUrl) {
+        window.open(currentImageUrl, '_blank');
+      }
     });
   
     $closeModal.on('click', function () {
