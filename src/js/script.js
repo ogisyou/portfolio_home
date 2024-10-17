@@ -216,7 +216,6 @@ Section-title stand out
         <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 1rem; border-radius: 0.5rem; width: 60%; max-width: 1200px; height: 80%; max-height: 90vh; overflow: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
           <img id="modalImage" src="" alt="モーダル画像" style="max-width: 100%; height: auto; cursor: pointer;">
           <h3 id="modalTitle" style="margin-top: 1rem; text-align: center; font-weight: bold; font-size: 1.2rem;"></h3>
-          <p id="modalDescription" style="margin-top: 1rem; text-align: justify; font-weight: bold;"></p>
           <p id="modalDetailedDescription" style="margin-top: 1rem; text-align: justify;"></p>
           <div id="modalIcons" style="display: none; justify-content: center; margin-top: 1rem;">
             <a id="githubLink" href="#" target="_blank" style="margin: 0 1rem;">
