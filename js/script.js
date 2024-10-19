@@ -73,29 +73,28 @@ $(document).ready(function () {
   /*
   Loading screen
   ================================================ */
-
-  $(window).on('load', function () {
-    const $loadingAreaBlack = $('.loading');
-    const $loadingAreaWhite = $('.loading-screen');
-    const $loadingText = $('.loading-screen p');
+  
+  window.addEventListener('load', function () {
+    const loadingAreaBlack = document.querySelector('.loading');
+    const loadingAreaWhite = document.querySelector('.loading-screen');
+    const loadingText = document.querySelector('.loading-screen p');
 
     // ローディング中（ブラック）
     setTimeout(function () {
-      $loadingAreaBlack.addClass('fadeOut');
-      setTimeout(function () {
-        $loadingAreaBlack.css('visibility', 'hidden');
-      }, 2000); 
+        loadingAreaBlack.classList.add('fadeOut');
+        setTimeout(function () {
+            loadingAreaBlack.style.visibility = 'hidden';
+        }, 2000);
     }, 1200);
 
     // ローディング中（ホワイト）
     setTimeout(function () {
-      $loadingAreaWhite.addClass('slideInOut');
-    }, 800); 
-    
+        loadingAreaWhite.classList.add('slideInOut');
+    }, 800);
 
     // ローディング中テキスト
-    $loadingText.addClass('textFadeOut');
-  });
+    loadingText.classList.add('textFadeOut');
+});
 
   /*
   Darkmode screen
@@ -218,13 +217,11 @@ Section-title stand out
           <h3 id="modalTitle" style="margin-top: 1rem; text-align: center; font-weight: bold; font-size: 1.2rem;"></h3>
           <p id="modalDetailedDescription" style="margin-top: 1rem; text-align: justify;"></p>
           <div id="modalIcons" style="display: none; justify-content: center; margin-top: 1rem;">
-            <a id="githubLink" href="#" target="_blank" style="margin: 0 1rem; display: flex; align-items: center; text-decoration: none; color: inherit;">
+            <a id="githubLink" href="#" target="_blank" style="margin: 0 1rem;">
               <i class="fab fa-github fa-2x"></i>
-              <span style="margin-left: 0.5rem;">GitHub</span>
             </a>
-            <a id="demoLink" href="#" target="_blank" style="margin: 0 1rem; display: flex; align-items: center; text-decoration: none; color: inherit;">
+            <a id="demoLink" href="#" target="_blank" style="margin: 0 1rem;">
               <i class="fas fa-camera fa-2x"></i>
-              <span style="margin-left: 0.5rem;">Demo</span>
             </a>
           </div>
           <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
@@ -235,7 +232,6 @@ Section-title stand out
         </div>
       </div>
     `;
-  
     $('body').append(modalHTML);
   
     const $modal = $('#imageModal');
