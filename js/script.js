@@ -79,7 +79,7 @@ $(document).ready(function () {
     const loadingText = document.querySelector('.loading-screen p');
 
     function hideLoadingScreen() {
-        loadingAreaBlack.style.visibility = 'hidden';
+        loadingAreaBlack.style.display = 'none';
         loadingAreaWhite.style.display = 'none';
     }
 
