@@ -70,21 +70,22 @@ $(document).ready(function () {
     }
   });
 
-  /*
+/*
   Loading screen
   ================================================ */
-
   window.addEventListener('load', function () {
     const loadingAreaBlack = document.querySelector('.loading');
     const loadingAreaWhite = document.querySelector('.loading-screen');
     const loadingText = document.querySelector('.loading-screen p');
 
+    function hideLoadingScreen() {
+        loadingAreaBlack.style.visibility = 'hidden';
+        loadingAreaWhite.style.display = 'none';
+    }
+
     // ローディング中（ブラック）
     setTimeout(function () {
         loadingAreaBlack.classList.add('fadeOut');
-        setTimeout(function () {
-            loadingAreaBlack.style.visibility = 'hidden';
-        }, 2000);
     }, 1200);
 
     // ローディング中（ホワイト）
@@ -94,8 +95,13 @@ $(document).ready(function () {
 
     // ローディング中テキスト
     loadingText.classList.add('textFadeOut');
-});
 
+    // アニメーション完了後にローディング画面を非表示
+    setTimeout(hideLoadingScreen, 3500);
+
+    // バックアップタイマー（6秒後に強制的に非表示）
+    setTimeout(hideLoadingScreen, 6000);
+});
   /*
   Darkmode screen
   ================================================ */
