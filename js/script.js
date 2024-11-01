@@ -70,38 +70,38 @@ $(document).ready(function () {
     }
   });
 
-/*
-  Loading screen
-  ================================================ */
-  window.addEventListener('load', function () {
-    const loadingAreaBlack = document.querySelector('.loading');
-    const loadingAreaWhite = document.querySelector('.loading-screen');
-    const loadingText = document.querySelector('.loading-screen p');
+// /*
+//   Loading screen
+//   ================================================ */
+//   window.addEventListener('load', function () {
+//     const loadingAreaBlack = document.querySelector('.loading');
+//     const loadingAreaWhite = document.querySelector('.loading-screen');
+//     const loadingText = document.querySelector('.loading-screen p');
 
-    function hideLoadingScreen() {
-        loadingAreaBlack.style.display = 'none';
-        loadingAreaWhite.style.display = 'none';
-    }
+//     function hideLoadingScreen() {
+//         loadingAreaBlack.style.display = 'none';
+//         loadingAreaWhite.style.display = 'none';
+//     }
 
-    // ローディング中（ブラック）
-    setTimeout(function () {
-        loadingAreaBlack.classList.add('fadeOut');
-    }, 1200);
+//     // ローディング中（ブラック）
+//     setTimeout(function () {
+//         loadingAreaBlack.classList.add('fadeOut');
+//     }, 1200);
 
-    // ローディング中（ホワイト）
-    setTimeout(function () {
-        loadingAreaWhite.classList.add('slideInOut');
-    }, 800);
+//     // ローディング中（ホワイト）
+//     setTimeout(function () {
+//         loadingAreaWhite.classList.add('slideInOut');
+//     }, 800);
 
-    // ローディング中テキスト
-    loadingText.classList.add('textFadeOut');
+//     // ローディング中テキスト
+//     loadingText.classList.add('textFadeOut');
 
-    // アニメーション完了後にローディング画面を非表示
-    setTimeout(hideLoadingScreen, 3500);
+//     // アニメーション完了後にローディング画面を非表示
+//     setTimeout(hideLoadingScreen, 3500);
 
-    // バックアップタイマー（6秒後に強制的に非表示）
-    setTimeout(hideLoadingScreen, 6000);
-});
+//     // バックアップタイマー（6秒後に強制的に非表示）
+//     setTimeout(hideLoadingScreen, 6000);
+// });
   /*
   Darkmode screen
   ================================================ */
@@ -137,7 +137,7 @@ $(document).ready(function () {
     $({ y: startValue, opacity: 0 }).animate(
       { y: endValue, opacity: 1 },
       {
-        duration: 5000,
+        duration: 2000,
         easing: 'swing', 
         step: function (now, fx) {
           if (fx.prop === 'y') {
