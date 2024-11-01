@@ -137,7 +137,7 @@ $(document).ready(function () {
     $({ y: startValue, opacity: 0 }).animate(
       { y: endValue, opacity: 1 },
       {
-        duration: 3000,
+        duration: 2500,
         easing: 'swing', 
         step: function (now, fx) {
           if (fx.prop === 'y') {
